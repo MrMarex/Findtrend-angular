@@ -1,0 +1,65 @@
+<header class="header" *ngIf="wideScreen; else smallScreen">
+    <div class="row align-items-center">
+        <div class="col-xxl-2 order-xxl-1 col-xl-3 order-xl-1 col-md-6 order-md-1 logo">
+            <img src="../../../../../../../assets/images/logo.svg" alt="logo" />
+            <span class="logo__text">Findtrend</span>
+        </div>
+
+        <app-navigation class="col-xxl-8 order-xxl-2 col-xl-6 order-xl-2 col-md-12 order-md-3 navigation"
+            [burger]="burger" [linksAndLabels]="linksAndLabels"></app-navigation>
+
+        <div class="col-xxl-2 col-xl-3 col-md-6 order-md-2 header__buttons">
+            <button [routerLink]="['/login']" class="button button__login">
+                Login
+            </button>
+            <button [routerLink]="['/register']" class="button button__register">
+                Register
+            </button>
+        </div>
+    </div>
+</header>
+<ng-template #smallScreen>
+    <header class="header__small-screen">
+        <div class="row justify-content-between">
+            <div class="col-2">
+                <img src="../../../../../../../assets/images/logo.svg" alt="logo" />
+            </div>
+            <div class="col-2 burger__icon">
+                <div *ngIf="!showMenu; else showClose">
+                    <svg (click)="onShowMenu()" class="burger__icon-image" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 17H21V15H3V17Z" fill="white" />
+                        <path d="M3 9H21V7H3V9Z" fill="white" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <ng-template #showClose>
+            <div class="modal__wrapper">
+                <div class="modal__body">
+                    <div>
+                        <div class="row justify-content-between modal__header">
+                            <div class="col-2">
+                                <img class="modal__logo" src="../../../../../../../assets/images/logo.svg" alt="logo" />
+                            </div>
+                            <div (click)="onShowMenu()" class="col-2 close__modal">
+                                <span class="close__x">
+                                    &#10006;
+                                </span>
+                            </div>
+                        </div>
+                        <app-navigation [linksAndLabels]="linksAndLabels" [burger]="burger">
+                            <button [routerLink]="['/login']" class="button button__login">
+                                Login
+                            </button>
+                            <button [routerLink]="['/register']" class="button button__register">
+                                Register
+                            </button>
+                        </app-navigation>
+                    </div>
+                </div>
+            </div>
+            <div (click)="onShowMenu()" class="modal__background"></div>
+        </ng-template>
+    </header>
+</ng-template>

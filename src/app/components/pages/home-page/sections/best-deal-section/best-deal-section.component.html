@@ -1,0 +1,27 @@
+<section class="best-deal__wrapper" [ngSwitch]="screen">
+    <div class="title__wrapper" *ngSwitchDefault>
+        <app-title color="white" size="medium" label="Get your best deal"></app-title>
+    </div>
+    <div class="title__wrapper" *ngSwitchCase="'smallScreen'">
+        <app-title color="white" size="small" label="Get your best deal"></app-title>
+    </div>
+    <div class="content__wrapper">
+        <div class="plan-picker__wrapper">
+            <span class="plan" [ngClass]="plan === 'Yearly' ? 'plan--grey' : 'plan--white'">Monthly</span>
+            <button (click)="changePlan()" class="switcher">
+                <div class="green__circle" [ngClass]="
+              plan === 'Yearly' ? 'green__circle--right' : 'green__circle--left'
+            "></div>
+            </button>
+            <span class="plan" [ngClass]="plan === 'Yearly' ? 'plan--white' : 'plan--grey'">Yearly</span>
+            <app-pointer *ngSwitchDefault class="pointer" image="../../../../../assets/images/Arrow-white.svg"
+                label="Save 10% per month"></app-pointer>
+            <app-pointer *ngSwitchCase="'smallScreen'" class="pointer--small"
+                image="../../../../../assets/images/Arrow-white-up.svg" label="Save 10% per month" size="small"
+                [rotate]="'rotated'" [position]="'arrow-first-white'"></app-pointer>
+        </div>
+        <div class="plans-wrapper">
+            <app-plan-card *ngFor="let plan of plans" [plan]="plan"></app-plan-card>
+        </div>
+    </div>
+</section>

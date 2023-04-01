@@ -1,0 +1,36 @@
+<div class="hero__wrapper">
+    <app-header></app-header>
+    <section class="hero__container" [ngSwitch]="screen">
+        <div class="row justify-content-center">
+            <div class="hero__content">
+                <div class="col-5 title__wrapper">
+                    <app-title *ngSwitchDefault label="Minimize your tabs. Find the trends!" size="extra-large"
+                        color="white"></app-title>
+                </div>
+                <app-title *ngSwitchCase="'smallScreen'" size="small" color="white"
+                    label="Minimize your tabs. Find the trends!"></app-title>
+
+                <div class="hero__text">
+                    <p>
+                        Don’t let your computer memories consumes all of those browser tabs.
+                    </p>
+                    <p>
+                        Findtrend let you gathers all of your favorite website into one
+                        place.
+                    </p>
+                </div>
+
+                <div class="hero__button--container">
+                    <button class="button__start">Get Started🔥</button>
+                    <app-pointer class="pointer" image="../../../../../assets/images/Arrow-white.svg"
+                        label="All research start from here"></app-pointer>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 tabs__container">
+                <img *ngFor="let tab of tabs" [class]="tab.class" [src]="tab.source" [alt]="tab.alternative" />
+            </div>
+        </div>
+    </section>
+</div>

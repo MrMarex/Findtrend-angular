@@ -1,0 +1,15 @@
+.login__page {
+    min-height: 100vh;
+    background-color: black;
+    background-image: url("../../../../assets/images/ornament-background.svg");
+    background-position: center;
+}
+
+.wrapper {
+    margin-top: 140px;
+}
+
+.title {
+    margin-bottom: 40px;
+    text-align: center;
+}

@@ -1,0 +1,41 @@
+<section class="tabs--section__wrapper">
+    <div class="tabs--section__content" [ngSwitch]="screen">
+        <app-title *ngSwitchDefault color="black" label="Open new tabs is sh*t " size="large"></app-title>
+        <app-title *ngSwitchCase="'smallScreen'" color="black" label="Open new tabs is sh*t "
+            size="extra-small"></app-title>
+        <div *ngSwitchDefault class="row align-items-center">
+            <app-pointer class="col-2 pointer--left" image="../../../../../assets/images/Arrow-black.svg" color="black"
+                label="solution for discover a trend" [position]="'arrow-first'"></app-pointer>
+            <div class="col-8 tab__background">
+                <div class="row align-items-center justify-content-center tab__wrapper">
+                    <img class="col-8 tab" src="../../../../../assets/images/Findtrend.svg" alt="Findtrend tab" />
+                </div>
+            </div>
+            <app-pointer class="col-2 pointer--right" image="../../../../../assets/images/Arrow-black-left.svg"
+                color="black" label="you just need one tab now"></app-pointer>
+            <div class="open-tab__text">
+                <p>
+                    A solution for your browser tabs and don’t make your device get slower
+                    over time. Get ease and faster to discover a trend with just one tab.
+                </p>
+            </div>
+        </div>
+        <div *ngSwitchCase="'smallScreen'">
+            <div class="tab__background">
+                <app-pointer class="col-2 pointer-left--small" [size]="'small'"
+                    image="../../../../../assets/images/Arrow-up.svg" color="black"
+                    label="solution for discover a trend" [position]="'arrow-first'"></app-pointer>
+                <img class="tab--small" src="../../../../../assets/images/Findtrend.svg" alt="Findtrend tab" />
+                <app-pointer class="col-2 pointer-right--small" [size]="'small'" [rotate]="'rotated'"
+                    image="../../../../../assets/images/Arrow-down.svg" color="black"
+                    label="you just need one tab now"></app-pointer>
+            </div>
+            <div class="open-tab__text">
+                <p>
+                    A solution for your browser tabs and don’t make your device get slower
+                    over time. Get ease and faster to discover a trend with just one tab.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

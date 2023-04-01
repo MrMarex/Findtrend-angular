@@ -1,0 +1,154 @@
+.hero__wrapper {
+    background-color: black;
+    background-image: url("../../../../../../assets/images/ornament-background.svg");
+    background-position: center;
+    color: #ffffff;
+    min-height: 800px;
+    padding: 0px 28px;
+}
+
+.hero__content {
+    text-align: center;
+    margin-top: 140px;
+}
+
+.title__wrapper {
+    margin: 0 auto;
+}
+
+.hero__text {
+    margin: 24px auto 0px auto;
+    max-width: 666px;
+    line-height: 150%;
+    color: #8b8b8b;
+    padding: 0px 17px;
+}
+
+.hero__button--container {
+    margin: 40px 0 95px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.button__start {
+    background-color: #a8ff35;
+    font-family: "Effra";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    padding: 16px 32px;
+    border-radius: 40px;
+    border: none;
+    margin-right: 18px;
+    transition: 0.3s;
+}
+
+.button__start :hover {
+    box-shadow: 0px 0px 10px 5px orange;
+}
+
+.button__start :active {
+    box-shadow: inset 0px 0px 20px 10px orange, 0px 0px 10px 5px orangered;
+}
+
+.tabs__container {
+    margin: 0 auto 90px auto;
+    max-width: 1200px;
+    height: 178px;
+    position: relative;
+}
+
+.tab {
+    position: absolute;
+}
+
+.tab__cryptopunk {
+    top: 0;
+    left: 0;
+    transform: rotate(-4deg);
+    z-index: 3;
+}
+
+.tab__popular-design {
+    bottom: 10px;
+    left: 20%;
+    transform: rotate(2deg);
+    z-index: 2;
+}
+
+.tab__product-design {
+    top: 10px;
+    right: 25%;
+    transform: rotate(-2deg);
+    z-index: 1;
+}
+
+.tab__elon-musk {
+    bottom: 0px;
+    right: 0px;
+    transform: rotate(4deg);
+}
+
+@media screen and (max-width: 720px) {
+
+    .hero__content {
+        margin-top: 90px;
+    }
+
+    .hero__text {
+        margin: 16px auto 0px auto;
+        font-size: 14px;
+    }
+
+    .hero__button--container {
+        margin: 32px 0 60px 0;
+    }
+
+    .button__start {
+        margin-right: 0;
+    }
+
+    .pointer {
+        display: none;
+    }
+
+    .tabs__container {
+        max-width: 300px;
+        height: 260px;
+        margin: 0 auto;
+        margin-bottom: 45px;
+    }
+
+    .tabs__container img {
+        width: 300px;
+        height: 80px;
+    }
+
+    .tab__popular-design {
+        top: 65px;
+        left: 0;
+        transform: rotate(2deg);
+        z-index: 2;
+    }
+
+    .tab__product-design {
+        top: 120px;
+        left: 0;
+        transform: rotate(-2deg);
+        z-index: 1;
+    }
+
+    .tab__elon-musk {
+        top: 185px;
+        left: 0;
+        transform: rotate(4deg);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hero__wrapper {
+        background-image: url("../../../../../../assets/images/Bg-hero-small.png");
+        background-position: right top;
+        background-repeat: round;
+    }
+}
